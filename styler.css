@@ -1,0 +1,30 @@
+/*this is for title name and author text*/
+.center-align {
+padding:0px;
+color:green;
+font-family:Helvetica;
+font-size:1em;
+text-align:left;
+
+}
+
+/*this is for the button(Read More)*/
+#imagebutton{
+    position:relative;
+    align:left;
+    margin-bottom:15px;
+    
+  }
+  /*this is */
+  .aligning{
+    margin-left:40px;
+    margin-top:0px;
+    align:left;
+    color:red;
+  
+  }
+
+#result{
+  margin-top:20px;
+  }
+  
