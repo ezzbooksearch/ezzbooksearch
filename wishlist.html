@@ -1,0 +1,135 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      min-height: 200px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none; 
+      }
+    }
+  </style>
+</head>
+
+<p id="rabbit"></p>
+
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();// Creates XMLHttp request
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {//When readyState is 4 and status is 200, the response is ready
+      document.getElementById("rabbit").innerHTML = // response as a text string, using the responseText property
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "xmlhttp_info.txt", true);
+  xhttp.send();
+}
+</script>
+<body background="books.jpg"> 
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="registration.php">Register </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="wishlist.html">Wish List</a></li>
+        <li><a href="cart">Buy Book</a></li>
+        <li><a href="contact.html">Contact</a></li>
+		<li><a href="feedback.html">Feedback</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<div class="jumbotron">
+<h1>Wishlist Here</h1>
+<p>Here!</p></div>
+
+
+<div class="container" class="container-fluid">
+  <h3>BOOK</h3>
+  <br>
+  <form id="wishlist" class="form-horizontal" action ="wishlist.php" method="post" enctype="multipart/form-data" autocomplete="on">
+  <div class="row">
+    <div class="col-sm-2">
+      <img src="images/beauty_js.jpg" class="img-responsive" style="width:100%" alt="Image" >
+	  <button type="submit" name="i1" class="btn btn-info"  formaction="cart.php">Buy</button>
+	  <button type="submit" name="i1" class="btn btn-info">Add to Cart</button>
+	  
+      
+    </div>
+    <div class="col-sm-2"> 
+      <img src="images/c_14_quick.jpg" class="img-responsive" style="width:100%" alt="Image">
+	  <button type="submit" name="i1" class="btn btn-info" formaction="cart.php">Buy</button>
+	  <button type="submit" name="i1" class="btn btn-info">Add to Cart</button>
+          
+    </div>
+    <div class="col-sm-2"> 
+      <img src="images/c_sharp_6.jpg" class="img-responsive" style="width:100%" alt="Image">
+	  <button type="submit" name="i1" class="btn btn-info" formaction="cart.php">Buy</button>
+	  <button type="submit" name="i1" class="btn btn-info">Add to Cart</button>
+     
+    </div>
+    <div class="col-sm-2"> 
+      <img src="images/android_studio.jpg" class="img-responsive" style="width:100%" alt="Image">
+	  <button type="submit" name="i1" class="btn btn-info" formaction="cart.php">Buy</button>
+	  <button type="submit" name="i1" class="btn btn-info">Add to Cart</button>
+     
+    </div> 
+    <div class="col-sm-2"> 
+      <img src="images/logic_program.jpg" class="img-responsive" style="width:100%" alt="Image">
+	  <button type="submit" name="i1" class="btn btn-info" formaction="cart.php">Buy</button>
+	  <button type="submit" name="i1" class="btn btn-info">Add to Cart</button>
+      
+    </div>     
+    <div class="col-sm-2"> 
+      <img src="images/web-Designing-training-institute-in-ameerpet.jpg" class="img-responsive" style="width:100%" alt="Image">
+	  <button type="submit" name="i1" class="btn btn-info" formaction="cart.php">Buy</button>
+	  <button type="submit" name="i1" class="btn btn-info">Add to Cart</button>
+      
+      </div>
+  </div>
+</div>
+
+</form>
+
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>

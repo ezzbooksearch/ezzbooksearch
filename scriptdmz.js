@@ -46,6 +46,7 @@ $(document).ready(function() {
           
           }
      });
+     $('body').append('<link rel="stylesheet" type="text/css" href="{"vendor/bootstrap/css/bootstrap.min.css"}">')
      }
    return false;
    });

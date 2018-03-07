@@ -1,4 +1,11 @@
 /*this is for title name and author text*/
+/*resets the pattern
+*{
+margin:0;
+padding:0px;
+}
+*/
+
 .center-align {
 padding:0px;
 color:green;
@@ -28,3 +35,15 @@ text-align:left;
   margin-top:20px;
   }
   
+  .container{
+  color:blue;
+  }
+  /*
+  p.ex1 {
+    min-height: 1000px;
+    max-height: 50%;
+    margin-top:40px;
+    margin-left:40px;
+    margin-right:40px;
+}
+*/
