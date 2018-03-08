@@ -1,0 +1,11 @@
+<?php
+
+include "account.php";
+if(isset($_POST['username']) && isset($_POST['password'])){
+  echo "Welcome ". $_POST['username']. "<br />";
+  echo "Password: ".$_POST['password'];
+  
+  //exit();
+  }
+
+?>
