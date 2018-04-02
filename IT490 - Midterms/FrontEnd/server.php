@@ -36,7 +36,7 @@ if (isset($_POST['register'])){
 	$username  = mysqli_real_escape_string($conn, $_POST['username']);
 	$email     = mysqli_real_escape_string($conn, $_POST['email']);
 	$password  = mysqli_real_escape_string($conn, $_POST['password']);
-	$password2 = mysqli_real_escape_string($conn, $_POST['password2']);
+	$password2 = mysqli_real_escape_string($conn, $_POST['password2']); 
 	//$hash      = mysql_real_escape_string($_POST['hash']);
  
 // ensure that form fields are filled properly
