@@ -1,6 +1,0 @@
-
-<?php
-
-$dbcon=mysqli_connect("localhost","root","ansh123");
-mysqli_select_db($dbcon,"users");
-?>
