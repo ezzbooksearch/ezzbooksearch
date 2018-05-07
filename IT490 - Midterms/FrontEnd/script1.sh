@@ -2,7 +2,7 @@
 
 # Checking to make sure file exit 
 
-#file="/home/palabi/frontend.v1.tgz"
+#file="/home/frontend.v1.tgz"
 
 file1=$1
 
