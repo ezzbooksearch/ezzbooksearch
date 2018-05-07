@@ -1,0 +1,77 @@
+Centralized Logging
+----------------------
+
+Centralized Logging is achieved by 2 methods:
+
+- a single php. file embedded in every VM that logs-in errors when an error is triggered and appends to a txt. file
+
+- a true centralized logging vm - that logs and monitors every activity by any user with the following options:
+              * Server is linked and outputs to a mysql db
+              * Server has a functional web-based UI that can display real-time log events
+              * Server detects server/web-based/user errors 
+              * Server can output scv/txt/html files
+              
+              
+INSTRUCTIONS (Terminal-based)
+--------------------
+INSTALL DEPENDENCIES
+--------------------
+1. Apache
+Install Apache Web server 
+
+2. MySQL
+Install MySQL database
+
+3. PHP
+Install php
+
+4. Restart Web Server
+
+5. Rsyslog (different versions will install to different directories - TAKE NOTE)
+Install Rsyslog
+---------------------------------------------------
+LINK MYSQL DB to RSYSLOG (from syslog to rsyslogdb)
+---------------------------------------------------
+1. Create DB rsyslog and table columns (Date, Host, Event, Message, etc..)
+2. Create dedicated user acces to RsyslogDB
+3. Configure the Rsyslog server in order to use MySQL
+
+      *vi /etc/rsyslog.conf as root: (YOU NEED TO EDIT THIS)
+      
+Add the MySQL module:
+
+$ModLoad ommysql
+
+Add the forwarding rule:
+
+*.* :ommysql:127.0.0.1,rsyslogdb,rsysloguser,changeMe  ( *Credentials set in step 1 MUST MATCH to those in step 2) 
+
+where:
+
+127.0.0.1 -       mysql server address (THIS CHANGES - read below)
+rsyslogdb -       mysql rsyslog database name
+rsysloguser -     mysql rsyslog database user username
+changeMe -        mysql rsyslog database user password
+        
+      *IMPORTANT - the IP address will change depending on the network the Server is using
+      *Credentials set in step 1 MUST MATCH to those in step 2 (AGAIN!!)
+      
+4. RESTART rsyslog, mysql, apache for the logger to take effect and start log-in information
+
+5. You will start seeing that your data fields in mysql DB being populated by log entries afterwards
+
+OPTIONAL
+-------------
+LOG-ANALYZER
+-------------
+1. install and unpack Log-Analyzer
+
+2. grant permission to the following file: chmod +x configure.sh secure.sh
+
+3. run ./configure.sh. 
+
+4. complete the installation open http://localhost/loganalyzer on any web browser
+
+
+
+ 
